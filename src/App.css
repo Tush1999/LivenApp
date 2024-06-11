@@ -1,38 +1,261 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: auto;
+  max-width: 500px;
+  height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container img {
+  width: 60px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.app-btn {
+  background-color: rgb(255, 60, 110);
+  border-radius: 61px;
+  padding: 5px 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  opacity: 1;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.purchase-giftInner{
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.icon{
+  position: relative;
+}
+
+.icon::before {
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+  width: 46px;
+  height: 46px;
+  border: 3px solid #f6f1f1;
+  top: -4px;
+  left: -4px;
+}
+.icon img{
+  display: flex;
+  width: 44px;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  margin: 10px 0;
+  border-radius: 16px;
+  padding: 12px 30px;
+  border: 3px solid #e4e4e4;
+  align-items: center;
+  color: #000;
+}
+
+.content-container {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.san-dollars {
+  text-align: right;
+  font-weight: bold;
+  line-height: 50.4px;
+  font-size: 32px;
+  text-wrap: wrap;
+}
+
+.pay-now-text {
+  color: grey;
+  line-height: 1.15;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.purchase-gift {
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  max-width: 230px;
+  margin: 0 auto;
+  color: #777777;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cecece;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  top:50%;
+  background-color: white;
+  transform: translateY(-50%);
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: rgb(255, 60, 110);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px rgb(255, 60, 110);
+}
+
+input:checked+.slider:before {
+  transform: translate(22px, -50%);
+  left: unset;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.buy {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dollar {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.bonus {
+  font-weight: 600;
+  font-size: 16px;
+  color: #83b7af;
+  text-align: right;
+}
+
+.bonus-dollar {
+  font-size: 35px;
+  font-weight: 700;
+  color: #83b7af;
+}
+
+.app-exclusive {
+  background-color: rgb(255, 60, 110);
   color: white;
+  margin: auto;
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 12px;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+.app-exclusive img{
+  width: 25px;
+}
+.first-card {
+  margin-top: 40px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.second-container {
+  flex: 1;
+  overflow: auto;
+  padding: 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
 }
